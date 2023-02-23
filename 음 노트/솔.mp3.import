@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/솔.mp3-21b91be8ef589e7250d0e9eeb770ee76.mp3str"
+
+[deps]
+
+source_file="res://음 노트/솔.mp3"
+dest_files=[ "res://.import/솔.mp3-21b91be8ef589e7250d0e9eeb770ee76.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

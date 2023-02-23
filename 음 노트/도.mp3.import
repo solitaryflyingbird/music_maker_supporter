@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/도.mp3-568cd04ae8782f644efa0cfd44944fe9.mp3str"
+
+[deps]
+
+source_file="res://음 노트/도.mp3"
+dest_files=[ "res://.import/도.mp3-568cd04ae8782f644efa0cfd44944fe9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

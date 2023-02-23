@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/레.mp3-333d9f2dd40af400e00d1c1d79419f2e.mp3str"
+
+[deps]
+
+source_file="res://음 노트/레.mp3"
+dest_files=[ "res://.import/레.mp3-333d9f2dd40af400e00d1c1d79419f2e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

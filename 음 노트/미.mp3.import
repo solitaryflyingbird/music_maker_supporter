@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/미.mp3-a8d3816e0c060e11c6901b508ee65665.mp3str"
+
+[deps]
+
+source_file="res://음 노트/미.mp3"
+dest_files=[ "res://.import/미.mp3-a8d3816e0c060e11c6901b508ee65665.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
