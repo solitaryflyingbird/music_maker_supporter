@@ -14,14 +14,14 @@ func stop_node():
 	player.stop()
 	timer.stop()
 	
-	
+""""
 func _input(event):
 	
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
 		play_node()
 	elif player.playing:
 		stop_node()
-		
+"""
 
 
 func _on_Timer_timeout():
