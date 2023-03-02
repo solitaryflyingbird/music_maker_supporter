@@ -3,6 +3,10 @@ extends Area2D
 
 export var in_mouse = 0
 export(Resource) var note_sound
+
+
+export var note_name = ""
+export(NodePath) var array
 # Called when the node enters the scene tree for the first time.
 var player
 var timer
@@ -10,6 +14,8 @@ func _ready():
 	player = $player
 	player.stream = note_sound
 	timer = $Timer
+	array = get_node(array)
+	
 func play_node():
 	player.play()
 	timer.start()
@@ -18,6 +24,8 @@ func stop_node():
 	length = 2 - timer.time_left
 	player.stop()
 	timer.stop()
+	array.note_array.append(note_name)
+	print(array.note_array)
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://흰건반/white_gun_ban.tscn" type="PackedScene" id=1]
 [ext_resource path="res://음 노트/레.mp3" type="AudioStream" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://음 노트/도#.mp3" type="AudioStream" id=13]
 [ext_resource path="res://음 노트/라#.mp3" type="AudioStream" id=14]
 [ext_resource path="res://음 노트/미.mp3" type="AudioStream" id=15]
+[ext_resource path="res://건반판/note_array.gd" type="Script" id=16]
 
 [node name="Node2D" type="Node2D"]
 
@@ -26,6 +27,8 @@ scale = Vector2( 0.8, 1 )
 position = Vector2( 150, 213 )
 note_sound = ExtResource( 3 )
 black_gun = NodePath("../../black/도")
+note_name = "도"
+array = NodePath("../../note_array")
 
 [node name="레" parent="white" instance=ExtResource( 1 )]
 position = Vector2( 300, 213 )
@@ -33,18 +36,24 @@ collision_layer = 2
 note_sound = ExtResource( 2 )
 black_gun = NodePath("../../black/도")
 black_gun2 = NodePath("../../black/레")
+note_name = "레"
+array = NodePath("../../note_array")
 
 [node name="미" parent="white" instance=ExtResource( 1 )]
 position = Vector2( 450, 213 )
 collision_layer = 2
 note_sound = ExtResource( 15 )
 black_gun = NodePath("../../black/레")
+note_name = "미"
+array = NodePath("../../note_array")
 
 [node name="파" parent="white" instance=ExtResource( 1 )]
 position = Vector2( 600, 213 )
 collision_layer = 2
 note_sound = ExtResource( 8 )
 black_gun2 = NodePath("../../black/파")
+note_name = "파"
+array = NodePath("../../note_array")
 
 [node name="솔" parent="white" instance=ExtResource( 1 )]
 position = Vector2( 750, 213 )
@@ -52,6 +61,8 @@ collision_layer = 2
 note_sound = ExtResource( 7 )
 black_gun = NodePath("../../black/파")
 black_gun2 = NodePath("../../black/솔")
+note_name = "솔"
+array = NodePath("../../note_array")
 
 [node name="라" parent="white" instance=ExtResource( 1 )]
 position = Vector2( 900, 213 )
@@ -59,17 +70,23 @@ collision_layer = 2
 note_sound = ExtResource( 6 )
 black_gun = NodePath("../../black/솔")
 black_gun2 = NodePath("../../black/라")
+note_name = "라"
+array = NodePath("../../note_array")
 
 [node name="시" parent="white" instance=ExtResource( 1 )]
 position = Vector2( 1050, 213 )
 collision_layer = 2
 note_sound = ExtResource( 5 )
 black_gun = NodePath("../../black/라")
+note_name = "시"
+array = NodePath("../../note_array")
 
 [node name="도2" parent="white" instance=ExtResource( 1 )]
 position = Vector2( 1200, 213 )
 collision_layer = 2
 note_sound = ExtResource( 4 )
+note_name = "도2"
+array = NodePath("../../note_array")
 
 [node name="black" type="Node2D" parent="."]
 position = Vector2( 0, -350 )
@@ -77,19 +94,32 @@ position = Vector2( 0, -350 )
 [node name="도" parent="black" instance=ExtResource( 9 )]
 position = Vector2( 179, 461 )
 note_sound = ExtResource( 13 )
+note_name = "도#"
+array = NodePath("../../note_array")
 
 [node name="레" parent="black" instance=ExtResource( 9 )]
 position = Vector2( 299, 460 )
 note_sound = ExtResource( 12 )
+note_name = "레#"
+array = NodePath("../../note_array")
 
 [node name="파" parent="black" instance=ExtResource( 9 )]
 position = Vector2( 539, 459 )
 note_sound = ExtResource( 10 )
+note_name = "파#"
+array = NodePath("../../note_array")
 
 [node name="솔" parent="black" instance=ExtResource( 9 )]
 position = Vector2( 663, 457 )
 note_sound = ExtResource( 11 )
+note_name = "솔#"
+array = NodePath("../../note_array")
 
 [node name="라" parent="black" instance=ExtResource( 9 )]
 position = Vector2( 781, 458 )
 note_sound = ExtResource( 14 )
+note_name = "라#"
+array = NodePath("../../note_array")
+
+[node name="note_array" type="Node2D" parent="."]
+script = ExtResource( 16 )

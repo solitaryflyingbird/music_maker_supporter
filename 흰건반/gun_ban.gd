@@ -6,6 +6,9 @@ var black_crash = 0
 export(Resource) var note_sound
 export(NodePath) var black_gun
 export(NodePath) var black_gun2
+
+export var note_name = ""
+export(NodePath) var array
 # Called when the node enters the scene tree for the first time.
 var player
 var timer
@@ -14,7 +17,7 @@ func _ready():
 	player = $player
 	player.stream = note_sound
 	timer = $Timer
-	
+	array = get_node(array)
 	if black_gun != null:
 		black_gun = get_node(black_gun)
 	if black_gun2 != null:
@@ -28,9 +31,10 @@ func play_node():
 func stop_node():
 	var length
 	length = 2 - timer.time_left
-
 	player.stop()
 	timer.stop()
+	array.note_array.append(note_name)
+	print(array.note_array)
 
 func _gun_check():
 	if black_gun != null or black_gun2 != null:
