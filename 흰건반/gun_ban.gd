@@ -50,7 +50,7 @@ func _input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed and black_in_mouse==0:
 		if in_mouse:
 			play_node()
-	elif player.playing:
+	elif player.playing and event is InputEventMouseButton:
 		stop_node()
 
 func _on_gun_ban_mouse_entered():
