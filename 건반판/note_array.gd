@@ -2,12 +2,15 @@ extends Node2D
 
 
 var note_array = []
-
+onready var note_label = get_node("note_label")
 # Called when the node enters the scene tree for the first time.
-func _array_append():
-	note_array.append(1)
+func _array_append(n):
+	note_array.append(n)
+	note_label.text_append(str(n))
+
+
+
 func _ready():
-	note_array.append(1)
 	print(note_array)
 	pass # Replace with function body.
 

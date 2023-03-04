@@ -24,7 +24,7 @@ func stop_node():
 	length = 2 - timer.time_left
 	player.stop()
 	timer.stop()
-	array.note_array.append(note_name)
+	array._array_append(note_name)
 	print(array.note_array)
 
 func _input(event):
