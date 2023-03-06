@@ -22,10 +22,8 @@
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 18 )
 
-[sub_resource type="BitmapFont" id=2]
-height = 20.0
-ascent = 1.0
-distance_field = true
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 18 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -150,6 +148,6 @@ __meta__ = {
 margin_right = 248.0
 margin_bottom = 81.0
 custom_fonts/font = SubResource( 2 )
-text = "xxx"
+text = "지우기"
 
 [connection signal="pressed" from="note_array/array_remove_button" to="note_array" method="array_remove"]
