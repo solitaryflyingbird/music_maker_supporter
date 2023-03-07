@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://음 노트/솔.mp3" type="AudioStream" id=1]
+[ext_resource path="res://비트/beet.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="beet" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="player" type="AudioStreamPlayer" parent="beet"]
+stream = ExtResource( 1 )
+
+[node name="play_timer" type="Timer" parent="beet"]
+wait_time = 2.0
+
+[connection signal="timeout" from="beet/play_timer" to="beet" method="_on_play_timer_timeout"]
