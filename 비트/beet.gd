@@ -25,15 +25,24 @@ func play_note():
 		player.play()
 		is_playing = true
 		is_space_pressed = true
+		
+func round_int(number):
+	var remainder = int(number*10) % 10
+
+	if remainder < 5:
+		return int(number)
+	else:
+		return int(number)+1
+
 
 func stop_note():
 	player.stop()
-	print(play_timer.time_left)
+	var note_length = (2 - play_timer.time_left)*8
+	note_length = (round_int(note_length))	
 	play_timer.stop()
 	is_playing = false
-	is_playing = false # Reset the flags
+
 
 
 func _on_play_timer_timeout():
-	print(play_timer.time_left)
 	stop_note()
