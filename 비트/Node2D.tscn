@@ -1,12 +1,43 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://음 노트/솔.mp3" type="AudioStream" id=1]
 [ext_resource path="res://비트/beet.gd" type="Script" id=2]
+[ext_resource path="res://비트/note_player.gd" type="Script" id=3]
+[ext_resource path="res://음 노트/파.mp3" type="AudioStream" id=4]
+[ext_resource path="res://음 노트/도.mp3" type="AudioStream" id=5]
+[ext_resource path="res://음 노트/시.mp3" type="AudioStream" id=6]
+[ext_resource path="res://음 노트/레#.mp3" type="AudioStream" id=7]
+[ext_resource path="res://음 노트/미.mp3" type="AudioStream" id=8]
+[ext_resource path="res://음 노트/레.mp3" type="AudioStream" id=9]
+[ext_resource path="res://음 노트/솔#.mp3" type="AudioStream" id=10]
+[ext_resource path="res://음 노트/파#.mp3" type="AudioStream" id=11]
+[ext_resource path="res://음 노트/도#.mp3" type="AudioStream" id=12]
+[ext_resource path="res://음 노트/라#.mp3" type="AudioStream" id=13]
+[ext_resource path="res://음 노트/도도.mp3" type="AudioStream" id=14]
+[ext_resource path="res://음 노트/라.mp3" type="AudioStream" id=15]
+[ext_resource path="res://비트/test_note.gd" type="Script" id=16]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="beet" type="Node2D" parent="."]
 script = ExtResource( 2 )
+note_arr = NodePath("../test_note")
+
+[node name="note_player" type="Node2D" parent="beet"]
+script = ExtResource( 3 )
+do = ExtResource( 5 )
+re = ExtResource( 9 )
+mi = ExtResource( 8 )
+fa = ExtResource( 4 )
+sol = ExtResource( 1 )
+ra = ExtResource( 15 )
+si = ExtResource( 6 )
+do2 = ExtResource( 14 )
+do_s = ExtResource( 12 )
+re_s = ExtResource( 7 )
+fa_s = ExtResource( 11 )
+sol_s = ExtResource( 10 )
+ra_s = ExtResource( 13 )
 
 [node name="player" type="AudioStreamPlayer" parent="beet"]
 stream = ExtResource( 1 )
@@ -14,5 +45,8 @@ stream = ExtResource( 1 )
 [node name="play_timer" type="Timer" parent="beet"]
 wait_time = 2.0
 one_shot = true
+
+[node name="test_note" type="Node2D" parent="."]
+script = ExtResource( 16 )
 
 [connection signal="timeout" from="beet/play_timer" to="beet" method="_on_play_timer_timeout"]

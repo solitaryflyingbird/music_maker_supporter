@@ -6,6 +6,7 @@ onready var note_label = get_node("note_label")
 # Called when the node enters the scene tree for the first time.
 func _array_append(n):
 	note_array.append(n)
+	printt(note_array)
 	note_label.array_to_text(note_array)
 func array_remove():
 	var array_length = note_array.size()
