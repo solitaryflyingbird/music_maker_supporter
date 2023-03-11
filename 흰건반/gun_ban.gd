@@ -33,7 +33,7 @@ func stop_node():
 	length = 2 - timer.time_left
 	player.stop()
 	timer.stop()
-	array._array_append(note_name)
+	array._array_append(note_name, note_sound)
 	print(array.note_array)
 
 func _gun_check():
@@ -61,3 +61,5 @@ func _on_gun_ban_mouse_exited():
 
 func _on_Timer_timeout():
 	stop_node()
+
+
