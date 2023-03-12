@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://흰건반/white_gun_ban.tscn" type="PackedScene" id=1]
 [ext_resource path="res://음 노트/레.mp3" type="AudioStream" id=2]
@@ -20,7 +20,19 @@
 [ext_resource path="res://NotoSansKR-Black.otf" type="DynamicFontData" id=18]
 [ext_resource path="res://비트_음정으로 지정/beet.tscn" type="PackedScene" id=19]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=9]
 font_data = ExtResource( 18 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -134,12 +146,17 @@ array = NodePath("../../note_array")
 [node name="note_array" type="Node2D" parent="."]
 script = ExtResource( 16 )
 
-[node name="note_label" type="Label" parent="note_array"]
+[node name="note_label" type="RichTextLabel" parent="note_array"]
+margin_left = 251.0
 margin_top = 460.0
 margin_right = 1013.0
 margin_bottom = 602.0
-custom_fonts/font = SubResource( 1 )
-autowrap = true
+custom_fonts/mono_font = SubResource( 5 )
+custom_fonts/bold_italics_font = SubResource( 6 )
+custom_fonts/italics_font = SubResource( 7 )
+custom_fonts/bold_font = SubResource( 8 )
+custom_fonts/normal_font = SubResource( 9 )
+bbcode_enabled = true
 script = ExtResource( 17 )
 __meta__ = {
 "_editor_description_": ""

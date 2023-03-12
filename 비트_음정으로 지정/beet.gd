@@ -4,6 +4,8 @@ var player
 var play_timer
 var rest_timer
 var note_player 
+
+
 var is_space_pressed = false
 var is_playing = false
 var note_length_arr = []
@@ -22,6 +24,7 @@ func _ready():
 	play_timer = $play_timer
 	note_player = $note_player
 	rest_timer = $rest_timer
+
 	
 	######
 
@@ -31,10 +34,10 @@ func play_ready():
 	note_name_arr = note_arr.note_array
 	sound_data_arr = note_arr.sound_array
 	note_bar = 0
-	print(note_name_arr)
+	note_length_arr = []
 	player.stream =sound_data_arr[note_bar]
 	play_start = true
-
+	note_arr.array_to_text()
 	
 	
 func next_note():
@@ -56,12 +59,13 @@ func play_note():
 	player.play()
 	is_playing = true
 	is_space_pressed = true
-	print(note_length_arr)
+	
 	if note_bar == 0:
 		return;
 	var rest_length = (2 - rest_timer.time_left)*8
 	rest_length = (round_int(rest_length))
 	note_length_arr.append(rest_length)
+	
 	
 		
 func round_int(number):
@@ -81,9 +85,7 @@ func stop_note():
 	is_playing = false
 	if len(sound_data_arr) == note_bar+1:
 		play_start = false
-		
-	print(11)
-	print(note_name_arr, 1111)
+
 	next_note()
 
 func _on_play_timer_timeout():
@@ -100,3 +102,5 @@ func _on_play_button_button_down():
 	if play_start == false:
 		return;
 	play_note()
+	note_arr.array_color(note_bar)
+
