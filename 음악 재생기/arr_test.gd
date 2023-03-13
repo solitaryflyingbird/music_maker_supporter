@@ -1,18 +1,15 @@
-extends Label
+extends Node2D
 
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var t
-var arr = ["1","2","3","4","5"]
+var arr= [["레", 6], 3, ["라", 2], 1, ["솔", 6], 2, ["파", 3], 1, ["미", 5], 1, ["레", 1], 1, ["도", 3], 1, ["레", 7], 2]
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var label = Label.new()
-	label.set_text("This text is [font=bold]bold[/font].")
-
-	
-	
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

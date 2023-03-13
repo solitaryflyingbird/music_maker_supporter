@@ -65,7 +65,7 @@ func play_note():
 	var rest_length = (2 - rest_timer.time_left)*8
 	rest_length = (round_int(rest_length))
 	note_length_arr.append(rest_length)
-	
+	print(note_length_arr)
 	
 		
 func round_int(number):

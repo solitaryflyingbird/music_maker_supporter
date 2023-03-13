@@ -1,0 +1,38 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://음악 재생기/music_play_system.gd" type="Script" id=1]
+[ext_resource path="res://음 노트/솔.mp3" type="AudioStream" id=2]
+[ext_resource path="res://음 노트/라.mp3" type="AudioStream" id=3]
+[ext_resource path="res://음 노트/시.mp3" type="AudioStream" id=4]
+[ext_resource path="res://음 노트/레.mp3" type="AudioStream" id=5]
+[ext_resource path="res://음 노트/도.mp3" type="AudioStream" id=6]
+[ext_resource path="res://음 노트/도도.mp3" type="AudioStream" id=7]
+[ext_resource path="res://음 노트/파.mp3" type="AudioStream" id=8]
+[ext_resource path="res://음 노트/파#.mp3" type="AudioStream" id=9]
+[ext_resource path="res://음 노트/솔#.mp3" type="AudioStream" id=10]
+[ext_resource path="res://음 노트/레#.mp3" type="AudioStream" id=11]
+[ext_resource path="res://음 노트/도#.mp3" type="AudioStream" id=12]
+[ext_resource path="res://음 노트/라#.mp3" type="AudioStream" id=13]
+[ext_resource path="res://음 노트/미.mp3" type="AudioStream" id=14]
+[ext_resource path="res://음악 재생기/arr_test.gd" type="Script" id=15]
+
+[node name="music_play_system" type="Node2D"]
+script = ExtResource( 1 )
+do = ExtResource( 6 )
+re = ExtResource( 5 )
+mi = ExtResource( 14 )
+fa = ExtResource( 8 )
+sol = ExtResource( 2 )
+la = ExtResource( 3 )
+si = ExtResource( 4 )
+do2 = ExtResource( 7 )
+do_shop = ExtResource( 12 )
+re_shop = ExtResource( 11 )
+fa_shop = ExtResource( 9 )
+sol_shop = ExtResource( 10 )
+la_shop = ExtResource( 13 )
+
+[node name="arr_test" type="Node2D" parent="."]
+script = ExtResource( 15 )
+
+[node name="player" type="AudioStreamPlayer" parent="."]

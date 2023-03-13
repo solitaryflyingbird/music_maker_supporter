@@ -1,42 +1,42 @@
 [gd_scene load_steps=26 format=2]
 
-[ext_resource path="res://흰건반/white_gun_ban.tscn" type="PackedScene" id=1]
-[ext_resource path="res://음 노트/레.mp3" type="AudioStream" id=2]
-[ext_resource path="res://음 노트/도.mp3" type="AudioStream" id=3]
-[ext_resource path="res://음 노트/도도.mp3" type="AudioStream" id=4]
-[ext_resource path="res://음 노트/시.mp3" type="AudioStream" id=5]
+[ext_resource path="res://비트_음정으로 지정/beet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://흰건반/white_gun_ban.tscn" type="PackedScene" id=2]
+[ext_resource path="res://검은건반/black_gun_ban.tscn" type="PackedScene" id=3]
+[ext_resource path="res://main_건반판/note_array.gd" type="Script" id=4]
+[ext_resource path="res://main_건반판/note_label.gd" type="Script" id=5]
 [ext_resource path="res://음 노트/라.mp3" type="AudioStream" id=6]
-[ext_resource path="res://음 노트/솔.mp3" type="AudioStream" id=7]
-[ext_resource path="res://음 노트/파.mp3" type="AudioStream" id=8]
-[ext_resource path="res://검은건반/black_gun_ban.tscn" type="PackedScene" id=9]
-[ext_resource path="res://음 노트/파#.mp3" type="AudioStream" id=10]
-[ext_resource path="res://음 노트/솔#.mp3" type="AudioStream" id=11]
-[ext_resource path="res://음 노트/레#.mp3" type="AudioStream" id=12]
-[ext_resource path="res://음 노트/도#.mp3" type="AudioStream" id=13]
-[ext_resource path="res://음 노트/라#.mp3" type="AudioStream" id=14]
-[ext_resource path="res://음 노트/미.mp3" type="AudioStream" id=15]
-[ext_resource path="res://건반판/note_array.gd" type="Script" id=16]
-[ext_resource path="res://건반판/note_label.gd" type="Script" id=17]
-[ext_resource path="res://NotoSansKR-Black.otf" type="DynamicFontData" id=18]
-[ext_resource path="res://비트_음정으로 지정/beet.tscn" type="PackedScene" id=19]
+[ext_resource path="res://음 노트/시.mp3" type="AudioStream" id=7]
+[ext_resource path="res://NotoSansKR-Black.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://음 노트/레.mp3" type="AudioStream" id=9]
+[ext_resource path="res://음 노트/도.mp3" type="AudioStream" id=10]
+[ext_resource path="res://음 노트/도도.mp3" type="AudioStream" id=11]
+[ext_resource path="res://음 노트/솔.mp3" type="AudioStream" id=12]
+[ext_resource path="res://음 노트/파.mp3" type="AudioStream" id=13]
+[ext_resource path="res://음 노트/파#.mp3" type="AudioStream" id=14]
+[ext_resource path="res://음 노트/솔#.mp3" type="AudioStream" id=15]
+[ext_resource path="res://음 노트/레#.mp3" type="AudioStream" id=16]
+[ext_resource path="res://음 노트/도#.mp3" type="AudioStream" id=17]
+[ext_resource path="res://음 노트/라#.mp3" type="AudioStream" id=18]
+[ext_resource path="res://음 노트/미.mp3" type="AudioStream" id=19]
 
 [sub_resource type="DynamicFont" id=5]
-font_data = ExtResource( 18 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=6]
-font_data = ExtResource( 18 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=7]
-font_data = ExtResource( 18 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=8]
-font_data = ExtResource( 18 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=9]
-font_data = ExtResource( 18 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 18 )
+font_data = ExtResource( 8 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -44,48 +44,48 @@ font_data = ExtResource( 18 )
 position = Vector2( 200, 0 )
 scale = Vector2( 0.64, 1 )
 
-[node name="도" parent="white" instance=ExtResource( 1 )]
+[node name="도" parent="white" instance=ExtResource( 2 )]
 position = Vector2( 150, 213 )
-note_sound = ExtResource( 3 )
+note_sound = ExtResource( 10 )
 black_gun = NodePath("../../black/도")
 note_name = "도"
 array = NodePath("../../note_array")
 
-[node name="레" parent="white" instance=ExtResource( 1 )]
+[node name="레" parent="white" instance=ExtResource( 2 )]
 position = Vector2( 301, 213 )
 collision_layer = 2
-note_sound = ExtResource( 2 )
+note_sound = ExtResource( 9 )
 black_gun = NodePath("../../black/도")
 black_gun2 = NodePath("../../black/레")
 note_name = "레"
 array = NodePath("../../note_array")
 
-[node name="미" parent="white" instance=ExtResource( 1 )]
+[node name="미" parent="white" instance=ExtResource( 2 )]
 position = Vector2( 452, 213 )
 collision_layer = 2
-note_sound = ExtResource( 15 )
+note_sound = ExtResource( 19 )
 black_gun = NodePath("../../black/레")
 note_name = "미"
 array = NodePath("../../note_array")
 
-[node name="파" parent="white" instance=ExtResource( 1 )]
+[node name="파" parent="white" instance=ExtResource( 2 )]
 position = Vector2( 603, 213 )
 collision_layer = 2
-note_sound = ExtResource( 8 )
+note_sound = ExtResource( 13 )
 black_gun2 = NodePath("../../black/파")
 note_name = "파"
 array = NodePath("../../note_array")
 
-[node name="솔" parent="white" instance=ExtResource( 1 )]
+[node name="솔" parent="white" instance=ExtResource( 2 )]
 position = Vector2( 754, 213 )
 collision_layer = 2
-note_sound = ExtResource( 7 )
+note_sound = ExtResource( 12 )
 black_gun = NodePath("../../black/파")
 black_gun2 = NodePath("../../black/솔")
 note_name = "솔"
 array = NodePath("../../note_array")
 
-[node name="라" parent="white" instance=ExtResource( 1 )]
+[node name="라" parent="white" instance=ExtResource( 2 )]
 position = Vector2( 905, 213 )
 collision_layer = 2
 note_sound = ExtResource( 6 )
@@ -94,18 +94,18 @@ black_gun2 = NodePath("../../black/라")
 note_name = "라"
 array = NodePath("../../note_array")
 
-[node name="시" parent="white" instance=ExtResource( 1 )]
+[node name="시" parent="white" instance=ExtResource( 2 )]
 position = Vector2( 1056, 213 )
 collision_layer = 2
-note_sound = ExtResource( 5 )
+note_sound = ExtResource( 7 )
 black_gun = NodePath("../../black/라")
 note_name = "시"
 array = NodePath("../../note_array")
 
-[node name="도2" parent="white" instance=ExtResource( 1 )]
+[node name="도2" parent="white" instance=ExtResource( 2 )]
 position = Vector2( 1207, 213 )
 collision_layer = 2
-note_sound = ExtResource( 4 )
+note_sound = ExtResource( 11 )
 note_name = "도2"
 array = NodePath("../../note_array")
 
@@ -113,38 +113,38 @@ array = NodePath("../../note_array")
 position = Vector2( 200, -350 )
 scale = Vector2( 0.8, 1 )
 
-[node name="도" parent="black" instance=ExtResource( 9 )]
+[node name="도" parent="black" instance=ExtResource( 3 )]
 position = Vector2( 179, 461 )
-note_sound = ExtResource( 13 )
+note_sound = ExtResource( 17 )
 note_name = "도#"
 array = NodePath("../../note_array")
 
-[node name="레" parent="black" instance=ExtResource( 9 )]
+[node name="레" parent="black" instance=ExtResource( 3 )]
 position = Vector2( 300, 460 )
-note_sound = ExtResource( 12 )
+note_sound = ExtResource( 16 )
 note_name = "레#"
 array = NodePath("../../note_array")
 
-[node name="파" parent="black" instance=ExtResource( 9 )]
+[node name="파" parent="black" instance=ExtResource( 3 )]
 position = Vector2( 541, 459 )
-note_sound = ExtResource( 10 )
+note_sound = ExtResource( 14 )
 note_name = "파#"
 array = NodePath("../../note_array")
 
-[node name="솔" parent="black" instance=ExtResource( 9 )]
+[node name="솔" parent="black" instance=ExtResource( 3 )]
 position = Vector2( 663, 457 )
-note_sound = ExtResource( 11 )
+note_sound = ExtResource( 15 )
 note_name = "솔#"
 array = NodePath("../../note_array")
 
-[node name="라" parent="black" instance=ExtResource( 9 )]
+[node name="라" parent="black" instance=ExtResource( 3 )]
 position = Vector2( 782, 458 )
-note_sound = ExtResource( 14 )
+note_sound = ExtResource( 18 )
 note_name = "라#"
 array = NodePath("../../note_array")
 
 [node name="note_array" type="Node2D" parent="."]
-script = ExtResource( 16 )
+script = ExtResource( 4 )
 
 [node name="note_label" type="RichTextLabel" parent="note_array"]
 margin_left = 251.0
@@ -157,7 +157,7 @@ custom_fonts/italics_font = SubResource( 7 )
 custom_fonts/bold_font = SubResource( 8 )
 custom_fonts/normal_font = SubResource( 9 )
 bbcode_enabled = true
-script = ExtResource( 17 )
+script = ExtResource( 5 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -168,7 +168,7 @@ margin_bottom = 81.0
 custom_fonts/font = SubResource( 2 )
 text = "지우기"
 
-[node name="beet" parent="." instance=ExtResource( 19 )]
+[node name="beet" parent="." instance=ExtResource( 1 )]
 note_arr = NodePath("../note_array")
 
 [node name="play_start_button" type="Button" parent="beet"]
