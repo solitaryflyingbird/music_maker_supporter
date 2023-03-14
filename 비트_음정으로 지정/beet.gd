@@ -31,13 +31,14 @@ func _ready():
 	note_arr = get_node(note_arr)
 
 func play_ready():
-	note_name_arr = note_arr.note_array
-	sound_data_arr = note_arr.sound_array
-	note_bar = 0
-	note_length_arr = []
-	player.stream =sound_data_arr[note_bar]
-	play_start = true
-	note_arr.array_to_text()
+	if len(note_arr.note_array)>0:
+		note_name_arr = note_arr.note_array
+		sound_data_arr = note_arr.sound_array
+		note_bar = 0
+		note_length_arr = []
+		player.stream =sound_data_arr[note_bar]
+		play_start = true
+		note_arr.array_to_text()
 	
 	
 func next_note():

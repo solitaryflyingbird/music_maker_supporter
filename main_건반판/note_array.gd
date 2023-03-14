@@ -15,6 +15,10 @@ func array_remove():
 		sound_array.remove(array_length - 1)
 		note_array.remove(array_length - 1)
 		note_label.array_to_text(note_array)
+func array_remove_all():
+	sound_array = []
+	note_array = []
+	note_label.array_to_text(note_array)
 func array_color(num):
 	note_label.array_to_text_color(note_array, num)
 func array_to_text():
