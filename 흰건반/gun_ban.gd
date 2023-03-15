@@ -13,6 +13,7 @@ export(NodePath) var array
 var player
 var timer
 var black_in_mouse
+var sprite
 func _ready():
 	player = $player
 	player.stream = note_sound
@@ -22,11 +23,13 @@ func _ready():
 		black_gun = get_node(black_gun)
 	if black_gun2 != null:
 		black_gun2 = get_node(black_gun2)
+	sprite = $Sprite
+	
 
 func play_node():
 	player.play()
 	timer.start()
-
+	sprite.modulate = Color(1, 0.5, 0.5, 1)
 
 func stop_node():
 	var length
@@ -35,7 +38,7 @@ func stop_node():
 	timer.stop()
 	array._array_append(note_name, note_sound)
 	print(array.note_array)
-
+	sprite.modulate = Color(1, 1, 1, 1)
 func _gun_check():
 	if black_gun != null or black_gun2 != null:
 		if black_gun != null and black_gun.in_mouse == 1:
@@ -55,9 +58,11 @@ func _input(event):
 
 func _on_gun_ban_mouse_entered():
 	in_mouse = 1
+	
 
 func _on_gun_ban_mouse_exited():
 	in_mouse = 0
+	
 
 func _on_Timer_timeout():
 	stop_node()

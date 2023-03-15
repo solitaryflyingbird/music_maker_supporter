@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/흰건반 복사본.png-6cb0d237d47092f5d47a45502abdcbee.stex"
+path="res://.import/검은건반_희게.png-c1301a0300c70a2ca4044dec8a788cdd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://검은건반/흰건반 복사본.png"
-dest_files=[ "res://.import/흰건반 복사본.png-6cb0d237d47092f5d47a45502abdcbee.stex" ]
+source_file="res://검은건반/검은건반_희게.png"
+dest_files=[ "res://.import/검은건반_희게.png-c1301a0300c70a2ca4044dec8a788cdd.stex" ]
 
 [params]
 
