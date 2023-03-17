@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://비트_음정으로 지정/beet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://흰건반/white_gun_ban.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://음 노트/도#.mp3" type="AudioStream" id=17]
 [ext_resource path="res://음 노트/라#.mp3" type="AudioStream" id=18]
 [ext_resource path="res://음 노트/미.mp3" type="AudioStream" id=19]
+[ext_resource path="res://음악 재생기/music_play_system.tscn" type="PackedScene" id=20]
 
 [sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 8 )
@@ -174,7 +175,7 @@ margin_top = 253.0
 margin_right = 251.0
 margin_bottom = 334.0
 custom_fonts/font = SubResource( 2 )
-text = "지우기"
+text = "모지우기"
 
 [node name="beet" parent="." instance=ExtResource( 1 )]
 note_arr = NodePath("../note_array")
@@ -193,8 +194,20 @@ margin_bottom = 250.0
 custom_fonts/font = SubResource( 2 )
 text = "연주"
 
+[node name="music_play_system" parent="." instance=ExtResource( 20 )]
+note_arr = NodePath("../beet")
+
+[node name="beat_play_button" type="Button" parent="music_play_system"]
+margin_left = 3.0
+margin_top = 427.0
+margin_right = 251.0
+margin_bottom = 508.0
+custom_fonts/font = SubResource( 2 )
+text = "연주 시작"
+
 [connection signal="pressed" from="note_array/array_remove_button" to="note_array" method="array_remove"]
 [connection signal="pressed" from="note_array/array_remove_button2" to="note_array" method="array_remove_all"]
 [connection signal="pressed" from="beet/play_start_button" to="beet" method="play_ready"]
 [connection signal="button_down" from="beet/play_button" to="beet" method="_on_play_button_button_down"]
 [connection signal="button_up" from="beet/play_button" to="beet" method="_on_play_button_button_up"]
+[connection signal="pressed" from="music_play_system/beat_play_button" to="music_play_system" method="_on_beat_play_button_pressed"]

@@ -12,6 +12,7 @@ var note_length_arr = []
 var note_name_arr = []
 var sound_data_arr = []
 var play_start = false
+var beet_play_ready = false
 
 
 export(NodePath) var note_arr
@@ -20,6 +21,7 @@ var now_note
 
 
 func _ready():
+	beet_play_ready = false
 	player = $player
 	play_timer = $play_timer
 	note_player = $note_player

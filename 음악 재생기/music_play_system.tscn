@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://음악 재생기/music_play_system.gd" type="Script" id=1]
 [ext_resource path="res://음 노트/솔.mp3" type="AudioStream" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://음 노트/도#.mp3" type="AudioStream" id=12]
 [ext_resource path="res://음 노트/라#.mp3" type="AudioStream" id=13]
 [ext_resource path="res://음 노트/미.mp3" type="AudioStream" id=14]
-[ext_resource path="res://음악 재생기/arr_test.gd" type="Script" id=15]
 
 [node name="music_play_system" type="Node2D"]
 script = ExtResource( 1 )
@@ -31,8 +30,5 @@ re_shop = ExtResource( 11 )
 fa_shop = ExtResource( 9 )
 sol_shop = ExtResource( 10 )
 la_shop = ExtResource( 13 )
-
-[node name="arr_test" type="Node2D" parent="."]
-script = ExtResource( 15 )
 
 [node name="player" type="AudioStreamPlayer" parent="."]

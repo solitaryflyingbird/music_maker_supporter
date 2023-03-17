@@ -15,6 +15,9 @@ export(Resource) var fa_shop
 export(Resource) var sol_shop
 export(Resource) var la_shop
 
+
+export(NodePath) var note_arr
+
 var arr= [["레", 6], 3, ["라", 2], 1, ["솔", 6], 2, ["파", 3], 1, ["미", 5], 1, ["레", 1], 1, ["도", 3], 1, ["레", 7], 2]
 
 var notes_dic
@@ -22,6 +25,7 @@ var player
 
 
 func _ready():
+	note_arr = get_node(note_arr)
 	notes_dic = {
 	"도": do,
 	"레": re,
@@ -38,7 +42,8 @@ func _ready():
 	"라#": la_shop,
 }
 	player = $player
-	play_music()
+
+
 	
 func play_note(note, time):
 	player.stream = note
@@ -59,3 +64,9 @@ func play_music():
 		else:
 			print("Invalid note:", note)
 
+
+
+func _on_beat_play_button_pressed():
+	print(note_arr.note_length_arr)
+	arr = note_arr.note_length_arr
+	play_music()
