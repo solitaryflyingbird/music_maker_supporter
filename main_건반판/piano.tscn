@@ -146,6 +146,7 @@ array = NodePath("../../note_array")
 
 [node name="note_array" type="Node2D" parent="."]
 script = ExtResource( 4 )
+beet_arr = NodePath("../beet")
 
 [node name="note_label" type="RichTextLabel" parent="note_array"]
 margin_left = 251.0
@@ -175,7 +176,16 @@ margin_top = 253.0
 margin_right = 251.0
 margin_bottom = 334.0
 custom_fonts/font = SubResource( 2 )
-text = "모지우기"
+text = "모두지우기"
+
+[node name="change_button" type="Button" parent="note_array"]
+margin_left = 3.0
+margin_top = 511.0
+margin_right = 251.0
+margin_bottom = 592.0
+rect_pivot_offset = Vector2( 176, 30 )
+custom_fonts/font = SubResource( 2 )
+text = "길이보기"
 
 [node name="beet" parent="." instance=ExtResource( 1 )]
 note_arr = NodePath("../note_array")
@@ -195,18 +205,20 @@ custom_fonts/font = SubResource( 2 )
 text = "연주"
 
 [node name="music_play_system" parent="." instance=ExtResource( 20 )]
-note_arr = NodePath("../beet")
+beet_arr = NodePath("../beet")
 
 [node name="beat_play_button" type="Button" parent="music_play_system"]
 margin_left = 3.0
 margin_top = 427.0
 margin_right = 251.0
 margin_bottom = 508.0
+rect_pivot_offset = Vector2( 176, 30 )
 custom_fonts/font = SubResource( 2 )
 text = "연주 시작"
 
 [connection signal="pressed" from="note_array/array_remove_button" to="note_array" method="array_remove"]
 [connection signal="pressed" from="note_array/array_remove_button2" to="note_array" method="array_remove_all"]
+[connection signal="pressed" from="note_array/change_button" to="note_array" method="_on_change_button_pressed"]
 [connection signal="pressed" from="beet/play_start_button" to="beet" method="play_ready"]
 [connection signal="button_down" from="beet/play_button" to="beet" method="_on_play_button_button_down"]
 [connection signal="button_up" from="beet/play_button" to="beet" method="_on_play_button_button_up"]

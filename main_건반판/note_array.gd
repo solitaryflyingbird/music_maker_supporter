@@ -1,6 +1,6 @@
 extends Node2D
 
-
+export(NodePath) var beet_arr
 var note_array = []
 var sound_array = []
 onready var note_label = get_node("note_label")
@@ -24,7 +24,9 @@ func array_color(num):
 func array_to_text():
 	note_label.array_to_text(note_array)
 func _ready():
-	pass 
+	beet_arr = get_node(beet_arr)
 
 
-#	pass
+func _on_change_button_pressed():
+	print(beet_arr.note_length_arr)
+	note_label.array_to_text(beet_arr.note_length_arr)
