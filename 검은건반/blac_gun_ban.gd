@@ -28,9 +28,7 @@ func stop_node():
 	length = 2 - timer.time_left
 	player.stop()
 	timer.stop()
-	print(array)
 	array._array_append(note_name, note_sound)
-	print(array.note_array)
 	sprite.texture = black_sprite
 	sprite.modulate = Color(1, 1, 1, 1)
 

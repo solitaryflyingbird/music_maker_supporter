@@ -46,30 +46,26 @@ func _ready():
 
 
 	
-func play_note(note, time):
-	player.stream = note
-	player.play()
-	yield(get_tree().create_timer(time / 4.0), "timeout")
-	player.stop()
+
 func play_music():
 	for note in arr:
-		print(note)
 		if note is Array:
 			var note_name = note[0]
 			var duration = note[1]
 			var note_sound = notes_dic[note_name]
 			var time = duration
-			play_note(note_sound, time)
+			player.stream = note_sound
+			player.play()
+			yield(get_tree().create_timer(time / 8.0), "timeout")
+			player.stop()
 		elif note is int:
-			yield(get_tree().create_timer(note / 4.0), "timeout")  # assume 1 beat = 0.25 seconds
+			yield(get_tree().create_timer(note / 8.0), "timeout")  # assume 1 beat = 0.25 seconds
 		else:
 			print("Invalid note:", note)
 
 
 
 func _on_beat_play_button_pressed():
-	print(beet_arr)
-	print(beet_arr.note_length_arr)
 	arr = beet_arr.note_length_arr
 	play_music()
 

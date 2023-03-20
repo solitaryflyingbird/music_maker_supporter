@@ -37,7 +37,6 @@ func stop_node():
 	player.stop()
 	timer.stop()
 	array._array_append(note_name, note_sound)
-	print(array.note_array)
 	sprite.modulate = Color(1, 1, 1, 1)
 func _gun_check():
 	if black_gun != null or black_gun2 != null:

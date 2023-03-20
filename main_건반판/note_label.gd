@@ -7,7 +7,6 @@ func array_to_text(array):
 	for i in array:
 		my_string = my_string + str(i)
 	bbcode_text = my_string
-	print(bbcode_text, 111)
 func array_to_text_color(array, number):
 	var label = Label.new()
 	number+=1

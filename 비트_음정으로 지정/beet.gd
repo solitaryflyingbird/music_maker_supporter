@@ -65,10 +65,10 @@ func play_note():
 	
 	if note_bar == 0:
 		return;
-	var rest_length = max((2 - rest_timer.time_left)*8, 1)
+	var rest_length = max((2-rest_timer.time_left)*8, 1)
 	rest_length = (round_int(rest_length))
 	note_length_arr.append(rest_length)
-	print(note_length_arr)
+
 	
 		
 func round_int(number):
@@ -80,7 +80,7 @@ func round_int(number):
 
 func stop_note():
 	player.stop()
-	var note_length = max( (2 - play_timer.time_left)*8, 1)
+	var note_length = max((2-play_timer.time_left)*8, 1)
 	note_length = (round_int(note_length))	
 	note_length_arr.append([note_name_arr[note_bar], note_length])
 	play_timer.stop()
@@ -98,6 +98,8 @@ func _on_play_timer_timeout():
 func _on_play_button_button_up():
 	if play_start == false:
 		return;
+	if is_playing ==false:
+		return;
 	stop_note()
 
 
@@ -106,4 +108,5 @@ func _on_play_button_button_down():
 		return;
 	play_note()
 	note_arr.array_color(note_bar)
+
 
