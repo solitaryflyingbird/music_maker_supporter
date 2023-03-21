@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://비트_음정으로 지정/beet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://흰건반/white_gun_ban.tscn" type="PackedScene" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://음 노트/라#.mp3" type="AudioStream" id=18]
 [ext_resource path="res://음 노트/미.mp3" type="AudioStream" id=19]
 [ext_resource path="res://음악 재생기/music_play_system.tscn" type="PackedScene" id=20]
+[ext_resource path="res://main_건반판/window_control.gd" type="Script" id=21]
 
 [sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 8 )
@@ -216,6 +217,27 @@ rect_pivot_offset = Vector2( 176, 30 )
 custom_fonts/font = SubResource( 2 )
 text = "연주 시작"
 
+[node name="window_control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 21 )
+
+[node name="MyWindow" type="WindowDialog" parent="window_control"]
+visible = true
+margin_left = 255.0
+margin_top = 137.0
+margin_right = 828.0
+margin_bottom = 445.0
+popup_exclusive = true
+window_title = "SAVE"
+
+[node name="save_button" type="Button" parent="window_control"]
+margin_top = 341.0
+margin_right = 248.0
+margin_bottom = 422.0
+custom_fonts/font = SubResource( 2 )
+text = "저장"
+
 [connection signal="pressed" from="note_array/array_remove_button" to="note_array" method="array_remove"]
 [connection signal="pressed" from="note_array/array_remove_button2" to="note_array" method="array_remove_all"]
 [connection signal="pressed" from="note_array/change_button" to="note_array" method="_on_change_button_pressed"]
@@ -223,3 +245,4 @@ text = "연주 시작"
 [connection signal="button_down" from="beet/play_button" to="beet" method="_on_play_button_button_down"]
 [connection signal="button_up" from="beet/play_button" to="beet" method="_on_play_button_button_up"]
 [connection signal="pressed" from="music_play_system/beat_play_button" to="music_play_system" method="_on_beat_play_button_pressed"]
+[connection signal="pressed" from="window_control/save_button" to="window_control" method="open_window"]
