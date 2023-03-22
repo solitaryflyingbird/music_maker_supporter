@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://비트_음정으로 지정/beet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://흰건반/white_gun_ban.tscn" type="PackedScene" id=2]
@@ -38,6 +38,12 @@ font_data = ExtResource( 8 )
 font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=10]
 font_data = ExtResource( 8 )
 
 [node name="Node2D" type="Node2D"]
@@ -228,8 +234,32 @@ margin_left = 255.0
 margin_top = 137.0
 margin_right = 828.0
 margin_bottom = 445.0
-popup_exclusive = true
 window_title = "SAVE"
+
+[node name="save_button" type="Button" parent="window_control/MyWindow"]
+margin_left = 170.0
+margin_top = 205.0
+margin_right = 418.0
+margin_bottom = 286.0
+custom_fonts/font = SubResource( 2 )
+text = "저장"
+
+[node name="file_name" type="LineEdit" parent="window_control/MyWindow"]
+margin_left = 136.0
+margin_top = 144.0
+margin_right = 447.0
+margin_bottom = 178.0
+custom_fonts/font = SubResource( 11 )
+
+[node name="Label" type="Label" parent="window_control/MyWindow"]
+anchor_right = 0.035
+anchor_bottom = 0.045
+margin_left = 84.0
+margin_top = 146.0
+margin_right = 240.945
+margin_bottom = 181.14
+custom_fonts/font = SubResource( 10 )
+text = "저장명"
 
 [node name="save_button" type="Button" parent="window_control"]
 margin_top = 341.0
@@ -245,4 +275,5 @@ text = "저장"
 [connection signal="button_down" from="beet/play_button" to="beet" method="_on_play_button_button_down"]
 [connection signal="button_up" from="beet/play_button" to="beet" method="_on_play_button_button_up"]
 [connection signal="pressed" from="music_play_system/beat_play_button" to="music_play_system" method="_on_beat_play_button_pressed"]
+[connection signal="pressed" from="window_control/MyWindow/save_button" to="window_control" method="_on_save_button_pressed"]
 [connection signal="pressed" from="window_control/save_button" to="window_control" method="open_window"]
