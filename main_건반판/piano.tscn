@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://비트_음정으로 지정/beet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://흰건반/white_gun_ban.tscn" type="PackedScene" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://음 노트/미.mp3" type="AudioStream" id=19]
 [ext_resource path="res://음악 재생기/music_play_system.tscn" type="PackedScene" id=20]
 [ext_resource path="res://main_건반판/window_control.gd" type="Script" id=21]
+[ext_resource path="res://main_건반판/Node.gd" type="Script" id=22]
 
 [sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 8 )
@@ -267,6 +268,9 @@ margin_right = 248.0
 margin_bottom = 422.0
 custom_fonts/font = SubResource( 2 )
 text = "저장"
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource( 22 )
 
 [connection signal="pressed" from="note_array/array_remove_button" to="note_array" method="array_remove"]
 [connection signal="pressed" from="note_array/array_remove_button2" to="note_array" method="array_remove_all"]

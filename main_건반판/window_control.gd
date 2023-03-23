@@ -15,3 +15,4 @@ func print_text():
 
 func _on_save_button_pressed():
 	print_text()
+	

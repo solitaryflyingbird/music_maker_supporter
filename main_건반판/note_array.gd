@@ -30,3 +30,4 @@ func _ready():
 func _on_change_button_pressed():
 	print(beet_arr.note_length_arr)
 	note_label.array_to_text(beet_arr.note_length_arr)
+	
