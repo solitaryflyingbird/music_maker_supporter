@@ -80,8 +80,12 @@ func round_int(number):
 
 func stop_note():
 	player.stop()
-	var note_length = max((2-play_timer.time_left)*8, 1)
-	note_length = (round_int(note_length))	
+	var note_length = (2-play_timer.time_left)*8
+	print(note_length)
+	if note_length>1:
+		note_length = 0
+	else:
+		note_length = (round_int(note_length))	
 	note_length_arr.append([note_name_arr[note_bar], note_length])
 	play_timer.stop()
 	rest_timer.start()

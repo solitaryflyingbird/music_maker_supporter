@@ -260,7 +260,7 @@ margin_top = 146.0
 margin_right = 240.945
 margin_bottom = 181.14
 custom_fonts/font = SubResource( 10 )
-text = "저장명"
+text = "파일명"
 
 [node name="save_button" type="Button" parent="window_control"]
 margin_top = 341.0

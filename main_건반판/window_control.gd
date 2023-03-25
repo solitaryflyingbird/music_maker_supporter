@@ -32,7 +32,7 @@ func _on_save_button_pressed():
 	
 func export_file(file_name: String, content: String) -> void:
 	var file = File.new()
-	var project_path = "res://"
+	var project_path = "res://save"
 	var file_path = project_path + file_name
 
 	file.open(file_path, File.WRITE)
