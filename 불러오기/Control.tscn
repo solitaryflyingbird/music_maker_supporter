@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://불러오기/lord_text.gd" type="Script" id=1]
+[ext_resource path="res://불러오기/board_control.gd" type="Script" id=2]
 
 [node name="lord_text" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="board_control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="board_control"]
+margin_right = 12.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 400, 400 )
+
+[node name="GridContainer" type="GridContainer" parent="board_control/ScrollContainer"]
