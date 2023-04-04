@@ -26,8 +26,7 @@ func process_folder():
 func get_text_files_contents(dir: Directory, folder_path: String) -> Array:
 	var file_data_array := []
 	
-	
-	# List all the files in the folder
+
 	dir.list_dir_begin()
 	var file_name := dir.get_next()
 	
